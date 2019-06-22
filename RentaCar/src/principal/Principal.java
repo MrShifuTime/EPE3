@@ -10,6 +10,7 @@ import gestionBD.GestionBD;
 import java.util.ArrayList;
 import java.util.List;
 import metodos.Metodos;
+import javax.swing.ImageIcon;
 /**
  *
  * @author rls
@@ -114,6 +115,11 @@ public class Principal extends javax.swing.JFrame {
         tablaCliente = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder("Opciones"));
 
@@ -877,6 +883,12 @@ public class Principal extends javax.swing.JFrame {
         System.exit(0);
 // TODO add your handling code here:
     }//GEN-LAST:event_btnOutActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        ImageIcon favicon = new ImageIcon("src/car-favicon.png");         
+        setIconImage(favicon.getImage());
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
