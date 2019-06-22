@@ -7,10 +7,12 @@ package principal;
 
 import javax.swing.JOptionPane;
 import gestionBD.GestionBD;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import metodos.Metodos;
 import javax.swing.ImageIcon;
+import javax.swing.JColorChooser;
 /**
  *
  * @author rls
@@ -71,12 +73,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         txtIdAuto = new javax.swing.JTextField();
         txtMarca = new javax.swing.JTextField();
         txtModelo = new javax.swing.JTextField();
-        txtColor = new javax.swing.JTextField();
         txtPPU = new javax.swing.JTextField();
         txtAño = new javax.swing.JTextField();
         btnLimp = new javax.swing.JButton();
@@ -84,6 +84,8 @@ public class Principal extends javax.swing.JFrame {
         txtValorArriendo = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
+        btnEscogerColor = new javax.swing.JButton();
+        txtColor = new javax.swing.JTextField();
         PanelAuto = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaAuto = new javax.swing.JTable();
@@ -274,7 +276,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -343,8 +345,6 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel10.setText("MODELO");
 
-        jLabel11.setText("COLOR");
-
         jLabel12.setText("AÑO");
 
         btnLimp.setText("Limpiar");
@@ -370,22 +370,31 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        btnEscogerColor.setText("COLOR");
+        btnEscogerColor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEscogerColorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel13)
-                    .addComponent(btnSalir))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel13)
+                            .addComponent(btnSalir)))
+                    .addComponent(btnEscogerColor))
+                .addGap(13, 13, 13)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(btnLimp, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -395,10 +404,10 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(txtIdAuto)
                     .addComponent(txtAño)
                     .addComponent(txtMarca, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtColor)
                     .addComponent(txtValorArriendo, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtModelo, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(57, 57, 57))
+                    .addComponent(txtModelo, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtColor, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -415,14 +424,14 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10)
-                    .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btnEscogerColor, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(txtAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -493,7 +502,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(PanelAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -506,13 +515,13 @@ public class Principal extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 40, Short.MAX_VALUE))
+                .addGap(0, 8, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 50, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("VEHICULOS", jPanel3);
@@ -701,7 +710,7 @@ public class Principal extends javax.swing.JFrame {
         jPtabla.setLayout(jPtablaLayout);
         jPtablaLayout.setHorizontalGroup(
             jPtablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
         );
         jPtablaLayout.setVerticalGroup(
             jPtablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -716,16 +725,16 @@ public class Principal extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap(113, Short.MAX_VALUE))
+                        .addContainerGap(102, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPtabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap(41, Short.MAX_VALUE))))
+                        .addContainerGap(33, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -736,7 +745,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPtabla, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("CLIENTES", jPanel2);
@@ -847,10 +856,10 @@ public class Principal extends javax.swing.JFrame {
     String PPU = txtPPU.getText();
     String Marca= txtMarca.getText();
     String Modelo = txtModelo.getText();
-    String Color = txtColor.getText();
+    //String Color = txtColor.getText();
     String Año = txtAño.getText();
     String ValorArriendo = txtValorArriendo.getText();
-        cl.ingresoDatos(id, PPU, Marca, Modelo, Color, Año, ValorArriendo);
+        cl.ingresoDatos(id, PPU, Marca, Modelo, "", Año, ValorArriendo);
     PanelAuto.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAcepActionPerformed
@@ -861,7 +870,7 @@ public class Principal extends javax.swing.JFrame {
     txtPPU.setText("");
     txtMarca.setText("");
     txtModelo.setText("");
-    txtColor.setText("");
+    // txtColor.setText("");
     txtAño.setText("");
     txtValorArriendo.setText("");
 // TODO add your handling code here:
@@ -889,6 +898,13 @@ public class Principal extends javax.swing.JFrame {
         ImageIcon favicon = new ImageIcon("src/car-favicon.png");         
         setIconImage(favicon.getImage());
     }//GEN-LAST:event_formWindowActivated
+
+    private void btnEscogerColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscogerColorActionPerformed
+        // TODO add your handling code here:
+        Color newColor = JColorChooser.showDialog(null, "Escoja un color", Color.RED);
+        
+        txtColor.setBackground(newColor);
+    }//GEN-LAST:event_btnEscogerColorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -930,6 +946,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnAcep;
     private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEscogerColor;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnIngreso;
     private javax.swing.JButton btnLimp;
@@ -951,7 +968,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
