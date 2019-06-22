@@ -13,6 +13,7 @@ import java.util.List;
 import metodos.Metodos;
 import javax.swing.ImageIcon;
 import javax.swing.JColorChooser;
+import javax.swing.JFileChooser;
 /**
  *
  * @author rls
@@ -900,9 +901,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void btnEscogerColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscogerColorActionPerformed
-        // TODO add your handling code here:
-        Color newColor = JColorChooser.showDialog(null, "Escoja un color", Color.RED);
-        
+        // TODO add your handling code here:  
+
+        Color newColor = JColorChooser.showDialog(this, "Escoja un color", Color.RED);           
         txtColor.setBackground(newColor);
     }//GEN-LAST:event_btnEscogerColorActionPerformed
 
