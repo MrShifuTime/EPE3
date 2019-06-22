@@ -108,12 +108,12 @@ public void ingresoDatos(String Rut, String Nombre,String Apellido,String Direcc
 
 
 
-    public static void main(String[] args) {
-    
-        GestionBD cl = new GestionBD();
-      //  cl.crearBD();
-//      cl.crearTabla();
-    }
+//    public static void main(String[] args) {
+//    
+//        GestionBD cl = new GestionBD();
+//      //  cl.crearBD();
+////      cl.crearTabla();
+//    }
     
     
 }
