@@ -85,8 +85,8 @@ public class Principal extends javax.swing.JFrame {
         txtValorArriendo = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
-        btnEscogerColor = new javax.swing.JButton();
         txtColor = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
         PanelAuto = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaAuto = new javax.swing.JTable();
@@ -371,30 +371,23 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        btnEscogerColor.setText("COLOR");
-        btnEscogerColor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEscogerColorActionPerformed(evt);
-            }
-        });
+        jLabel11.setText("COLOR");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel13)
-                            .addComponent(btnSalir)))
-                    .addComponent(btnEscogerColor))
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel13)
+                    .addComponent(btnSalir)
+                    .addComponent(jLabel11))
                 .addGap(13, 13, 13)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel8Layout.createSequentialGroup()
@@ -431,11 +424,11 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEscogerColor, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(18, 18, Short.MAX_VALUE)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtValorArriendo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -467,6 +460,11 @@ public class Principal extends javax.swing.JFrame {
                 "ID", "PPU", "MARCA", "MODELO", "COLOR", "AÑO", "VALOR ARRIENDO"
             }
         ));
+        tablaAuto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaAutoMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tablaAuto);
 
         javax.swing.GroupLayout PanelAutoLayout = new javax.swing.GroupLayout(PanelAuto);
@@ -900,12 +898,23 @@ public class Principal extends javax.swing.JFrame {
         setIconImage(favicon.getImage());
     }//GEN-LAST:event_formWindowActivated
 
-    private void btnEscogerColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscogerColorActionPerformed
-        // TODO add your handling code here:  
-
-        Color newColor = JColorChooser.showDialog(this, "Escoja un color", Color.RED);           
-        txtColor.setBackground(newColor);
-    }//GEN-LAST:event_btnEscogerColorActionPerformed
+    private void tablaAutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaAutoMouseClicked
+        // TODO add your handling code here:
+        int row = tablaAuto.getSelectedRow();
+        String colorValor = tablaAuto.getModel().getValueAt(row, 4).toString();
+        
+        switch(colorValor){
+            case "GRIS":
+                txtColor.setBackground(Color.GRAY);
+            break;
+            case "ROJO":
+                txtColor.setBackground(Color.RED);
+            break;
+            case "NEGRO":
+                txtColor.setBackground(Color.BLACK);
+            break;
+        }
+    }//GEN-LAST:event_tablaAutoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -947,7 +956,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnAcep;
     private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnEscogerColor;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnIngreso;
     private javax.swing.JButton btnLimp;
@@ -969,6 +977,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
