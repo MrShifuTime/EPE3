@@ -26,7 +26,7 @@ public class Principal extends javax.swing.JFrame {
        this.setLocationRelativeTo(null); //centrar formulario
         this.setTitle("byRLS");
        jPtabla.setVisible(false);
-       jPanel6.setVisible(false);
+       jPanel6.setVisible(true);
       
        PanelAuto.setVisible(false);
        
