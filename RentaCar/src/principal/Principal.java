@@ -780,7 +780,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnIngresoActionPerformed
 
     private void btnMostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostActionPerformed
-    al.mostrarDatos(tablaAuto);
+    cl.mostrarDatosAutos(tablaAuto);
     PanelAuto.setVisible(true);
 
         // TODO add your handling code here:
@@ -844,7 +844,7 @@ public class Principal extends javax.swing.JFrame {
     String Color = txtColor.getText();
     String Año = txtAño.getText();
     String ValorArriendo = txtValorArriendo.getText();
-        al.ingresoDatos(id, PPU, Marca, Modelo, Color, Año, ValorArriendo);
+        cl.ingresoDatos(id, PPU, Marca, Modelo, Color, Año, ValorArriendo);
     PanelAuto.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAcepActionPerformed
