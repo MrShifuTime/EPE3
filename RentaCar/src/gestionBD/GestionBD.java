@@ -55,7 +55,7 @@ public class GestionBD {
         
     }//Fin Metodo...
 //  
-public void ingresoDatos(String Rut, String Nombre,String Apellido,String Direccion,String Telefono,String Correo){
+public void ingresoDatosCliente(String Rut, String Nombre,String Apellido,String Direccion,String Telefono,String Correo){
     try{
     Class.forName(DRIVER);
     conexion = DriverManager.getConnection(URL);
@@ -131,7 +131,7 @@ public void crearTablaAutos(){
         
     }//Fin Metodo..
 
-public void ingresoDatos(int ID, String PPU,String Marca,String Modelo,String Color,String Año,String ValorArriendo){
+public void ingresoDatosAutos(int ID, String PPU,String Marca,String Modelo,String Color,String Año,String ValorArriendo){
     try{
     Class.forName(DRIVER);
     conexion = DriverManager.getConnection(URL);
