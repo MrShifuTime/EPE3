@@ -818,7 +818,7 @@ public class Principal extends javax.swing.JFrame {
         String Direccion = txtDireccion.getText();
         String Telefono = txtTelefono.getText();
         String Correo = txtCorreo.getText();
-        cl.ingresoDatos(Rut, Nombre, Apellido, Direccion, Telefono, Correo);
+        cl.ingresoDatosCliente(Rut, Nombre, Apellido, Direccion, Telefono, Correo);
         txtRut.setText("");
         txtNombre.setText("");
         txtApellido.setText("");
@@ -857,10 +857,10 @@ public class Principal extends javax.swing.JFrame {
     String PPU = txtPPU.getText();
     String Marca= txtMarca.getText();
     String Modelo = txtModelo.getText();
-    //String Color = txtColor.getText();
+    String Color = txtColor.getText();
     String Año = txtAño.getText();
     String ValorArriendo = txtValorArriendo.getText();
-        cl.ingresoDatos(id, PPU, Marca, Modelo, "", Año, ValorArriendo);
+    cl.ingresoDatosAutos(id, PPU, Marca, Modelo, Color, Año, ValorArriendo);
     PanelAuto.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAcepActionPerformed
