@@ -363,7 +363,6 @@
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="PanelAuto" min="-2" pref="207" max="-2" attributes="0"/>
                           <EmptySpace pref="138" max="32767" attributes="0"/>
                       </Group>
