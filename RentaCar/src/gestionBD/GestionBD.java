@@ -46,25 +46,32 @@ public class GestionBD {
     String NOMBREBD= "empresa.sqlite";
     String URL = "jdbc:sqlite: "+ NOMBREBD;
    
-//public void crearBD(){
-//    
-//    
-//        try{
-//            Class.forName(DRIVER);
-//            conexion = DriverManager.getConnection(URL);
-//        
-//        }catch (ClassNotFoundException | SQLException e){
-//            JOptionPane.showMessageDialog(null, "Error : "+ e,"Error!! ",JOptionPane.ERROR_MESSAGE);
-//        }
-//    }//Fin Metodo...
+public void crearBD(){
+    
+    
+        try{
+            Class.forName(DRIVER);
+            conexion = DriverManager.getConnection(URL);
+        
+        }catch (ClassNotFoundException | SQLException e){
+            JOptionPane.showMessageDialog(null, "Error : "+ e,"Error!! ",JOptionPane.ERROR_MESSAGE);
+        }
+    }//Fin Metodo...
+    public static void main(String[] args) {
+             GestionBD gbd;
+     gbd = new GestionBD();
+//     gbd.crearBD();
+     gbd.crearTabla();
+    }
  public void crearTabla(){
+
     
                 try{
             Class.forName(DRIVER);
             conexion = DriverManager.getConnection(URL);
             sentencia = conexion.createStatement();
             String SQL = "CREATE TABLE CLIENTE"+
-                    "(RUT TEXT  PRIMARY KEY,"+
+                    "(RUT INT  PRIMARY KEY,"+
                     "NOMBRE    TEXT NOT NULL,"+
                     "APELLIDO TEXT NOT NULL,"+
                     "DIRECCION TEXT NOT NULL,"+
