@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//esta clase es solo para la carga de ventana 
 package principal;
 
 import com.sun.awt.AWTUtilities;
@@ -17,25 +13,21 @@ public class Splash extends javax.swing.JFrame {
 private Timer t;
 private ActionListener al;
   
-    public Splash() {
+    public Splash() { //este metodo es para ver los segundos que toma en cargar el programa 
         al = new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e){
             if(jProgressBar1.getValue() < 100){
-                jProgressBar1.setValue(jProgressBar1.getValue()+5);
+               jProgressBar1.setValue(jProgressBar1.getValue()+5);
             }else{   
                 t.stop();
-               mostrarVentana();
-               
-              
-            }
-             
+                mostrarVentana();   
+            }    
         }
-       };
-        
+    };
              t = new Timer(100,al);//milisegundos 1000ms = ls
              initComponents();
-             //AWTUtilities.setWindowOpaque(this, false);
+           // AWTUtilities.setWindowOpaque(this, false);
              t.start();//es para cuando da inicio carga la barra 
     }
     @SuppressWarnings("unchecked")
@@ -54,7 +46,6 @@ private ActionListener al;
                 formWindowActivated(evt);
             }
         });
-        getContentPane().setLayout(new java.awt.FlowLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car-splash.png"))); // NOI18N
 
@@ -81,7 +72,7 @@ private ActionListener al;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(267, Short.MAX_VALUE)
+                        .addContainerGap(262, Short.MAX_VALUE)
                         .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(2, 2, 2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -91,11 +82,22 @@ private ActionListener al;
                 .addGap(91, 91, 91))
         );
 
-        getContentPane().add(jPanel1);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-  private void mostrarVentana(){
+  private void mostrarVentana(){//este es para cuando termine de cargar inicie el programa y cierre la ventana de carga 
          Principal d = new Principal();
          d.setLocationRelativeTo(null);
          d.setVisible(true);
