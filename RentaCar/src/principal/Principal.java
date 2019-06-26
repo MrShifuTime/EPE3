@@ -965,11 +965,10 @@ public class Principal extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try{
-            
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        try{ 
+            //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
              Splash f = new Splash();
-             f.setSize(270,270);
+             
              f.setLocationRelativeTo(null);
              f.setVisible(true);
              
@@ -977,9 +976,6 @@ public class Principal extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
-        
-        
-        
         
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
