@@ -554,11 +554,7 @@ public class Principal extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                .addGap(0, 63, Short.MAX_VALUE))
-=======
                 .addGap(0, 0, Short.MAX_VALUE))
->>>>>>> b23b221f674dacd948d2da17fb904f21e6691337
         );
 
         jTabbedPane1.addTab("VEHICULOS", jPanel3);
@@ -782,11 +778,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPtabla, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                .addContainerGap(224, Short.MAX_VALUE))
-=======
                 .addContainerGap(161, Short.MAX_VALUE))
->>>>>>> b23b221f674dacd948d2da17fb904f21e6691337
         );
 
         jTabbedPane1.addTab("CLIENTES", jPanel2);
