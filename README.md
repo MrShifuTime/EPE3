@@ -12,7 +12,9 @@ git checkout master
 //Sino no se aplicaran los cambios a la master.
 
 # verificar si se han hecho cambios en el proyecto de Java 
-git status 
+git status
+
+---
 
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
