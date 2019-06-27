@@ -1,6 +1,9 @@
 # EPE3
 Desarrollo EPE3
 
+# Descripcion 
+Aplicacion que tiene por objetivo ingresar y gestionar arriendo de vehiculos. :car:
+
 # comando para clonar repositorio en el pc
 git clone https://github.com/MrShifuTime/EPE3.git
 
@@ -15,6 +18,7 @@ git checkout master
 git status
 
 ---
+
 
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
